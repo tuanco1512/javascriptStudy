@@ -1288,3 +1288,175 @@
 // console.log(cards[0].value + cards[0].suit);
 
 // cards.forEach(card => console.log(`${card.value} ${card.suit}`));
+
+
+
+// error handling 
+// error = object with a description of somthing went wrong
+
+// throw = executes a user-defined error
+
+//EX
+//         Can't open a file
+//         Lose connection
+//         User types incorrect input
+//         Type Error
+
+// try {
+//     let x = window.prompt("Enter a #");
+//     x = Number(x);
+
+//     if(isNaN(x)) throw "That wasn't a number!";
+//     if(x == "") throw "That was empty";
+
+//     console.log(`${x} is a number`)
+// }
+// catch (error) {
+//     console.log(error);
+// }
+// finally{
+//     console.log("This alaways executes")
+// }
+
+
+
+//  setTimeout() = invokes a function after a number of miliseconds
+//                 asynchronous function(does not pause execution)
+
+// let item = "cryptocurrency";
+// let price = 420.69;
+
+// let timer1 = setTimeout(firstMessage, 3000, item, price);
+// let timer2 = setTimeout(secondMessage, 6000);
+// let timer3 = setTimeout(thirdMessage, 9000);
+
+// function firstMessage(item, price){
+//     alert(`Buy this ${item} for $${price}`);
+// }
+// function secondMessage(){
+//     alert(`This is not a scam!`);
+// }
+// function thirdMessage(){
+//     alert(`DO ITT!`);
+// }
+
+// document.getElementById("myButton").onclick = function(){
+//     clearTimeout(timer1);
+//     clearTimeout(timer2);
+//     clearTimeout(timer3);
+//     alert(`Thanks for buying <3`);
+// }
+
+
+
+// setInterval() = invokes a function repeatedly after a number of miliseconds
+//                 asynchronous function(does not pause execution)
+
+// let count = 0;
+// let max = window.prompt("count up to what number #?");
+// max = Number(max);
+
+// const myTimer = setInterval(countUp, 1000);
+
+// function countUp() {
+//     count += 1;
+//     console.log(count);
+//     if (count >= max) {
+//         clearInterval(myTimer);
+//     }
+// }
+
+
+
+// Date onjects = used to work with dates & times
+
+// let date = new Date();
+// let date = new Date(2023, 0, 1, 2, 3, 4, 5);
+// let date = new Date("Mar 1, 2023 00:00:00");
+
+// let year = date.getFullYear();
+// let dayOfMonth = date.getDate();
+// let dayOfWeek = date.getDay();
+// let month = date.getMonth();
+// let hour = date.getHours();
+// let minutes = date.getMinutes();
+// let seconds = date.getSeconds();
+// let ms = date.getMilliseconds();
+
+// date.setFullYear(2024);
+// date.setMonth(11);
+// date.setDate(31);
+// date.setHours(23);
+// date.setMinutes(1);
+// date.setSeconds(30);
+// date.getMilliseconds(0);
+
+// date = date.toLocaleString();
+// document.getElementById("myLabel").innerHTML = formatTime(date);
+
+// function formatDate(date){
+//     let year = date.getFullYear();
+//     let month = date.getMonth() + 1;
+//     let day = date.getDate();
+
+//     return `${month}/${day}/${year}`
+// }
+// function formatTime(date){
+//     let hours = date.getHours();
+//     let minutes = date.getMinutes();
+//     let seconds = date.getSeconds();
+//     let amOrPm = hours >= 12 ? "pm" : "am";
+
+//     hours = (hours % 12) || 12;
+
+//     return `${hours}:${minutes}:${seconds} ${amOrPm}`;
+// }
+
+
+
+// clock program
+
+// const myLabel = document.getElementById("myLabel");
+
+// update();
+// setInterval(update, 1000);
+
+// function update(){
+
+//     let date = new Date();
+//     myLabel.innerHTML = formatTime(date);
+
+//     function formatTime(date){
+//         let hours = date.getHours();
+//         let minutes = date.getMinutes();
+//         let seconds = date.getSeconds();
+//         let amOrPm = hours >= 12 ? "pm" : "am";
+
+//         hours = (hours % 12) || 12;
+
+//         hours = formatZeroes(hours);
+//         minutes = formatZeroes(minutes);
+//         seconds = formatZeroes(seconds);
+
+//         return `${hours}:${minutes}:${seconds} ${amOrPm}`;
+//     }
+
+//     function formatZeroes(time){
+//         time = time.toString();
+//         return time.length < 2 ? "0" + time : time;
+//     }
+// }
+
+
+
+// asynchronous
+// synchronous code = In an ordered sequence.
+//                    Step-by-step linear instruction
+//                    (start now, finish now)
+
+// asynchronous code = Out of sequence.
+//                     Ex. Access a database
+//                         Fetch a file
+//                         Task that take time
+//                     (start now, finish sometime later) 
+
