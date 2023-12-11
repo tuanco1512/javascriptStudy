@@ -1,5 +1,40 @@
-#countLabel{
+/* #countLabel{
     display: block;
     text-align: center;
     font-size: 50px;
+} */
+
+
+
+/* events */
+
+/* #myDiv{
+    background-color: lightgreen;
+    width: 100px;
+    height: 100px;
+} */
+
+
+
+/* .addEventListener() */
+
+/* #innerDiv{
+    background-color: lightgreen;
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+}
+
+#outerDiv{
+    background-color: lightgreen;
+    width: 200px;
+    height: 200px;
+} */
+
+
+
+/* show/hide HTML elements */
+
+#myImg{
+    width: 300px;
 }

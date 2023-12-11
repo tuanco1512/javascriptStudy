@@ -1460,3 +1460,281 @@
 //                         Task that take time
 //                     (start now, finish sometime later) 
 
+// console.log("START");
+// console.log("This step is synchronous");
+// setTimeout(() => console.log("This is asynchronous"), 5000);
+// console.log("END");
+
+
+
+// console.time() = starts a timer you can use to
+//                  track how long an operation takes
+//                  Give each timer unique name.
+
+//start
+// console.time("Respone time");
+
+// alert("CLICK THE OK BUTTON!");
+// setTimeout(() => console.log("Hello"), 3000);
+
+//end
+// console.timeEnd("Respone time");
+
+
+
+// promise = object that encapsulates the result of an asynchronous operation
+//           let asynchronous methods return values like synchronous methods
+//           "I promise to return something in the future"
+
+//           the STATE is 'pending' then: 'fullfilled' or 'rejected'
+//           the RESULT is what can be returned
+//           2 parts producing & consuming
+
+// const promise = new Promise((resolve, reject) => {
+
+//     let fileLoaded = false;
+
+//     if(fileLoaded){
+//         resolve("File loaded");
+//     }
+//     else{
+//         reject("File NOT loaded");
+//     }
+// });
+
+// promise.then(value => console.log(value))
+//         .catch(error => console.log(error));
+
+// const wait = time => new Promise((resolve) => {
+//     setTimeout(resolve, time);
+// });
+
+// wait(3000).then(() => console.log("Thanks for waiting!"))
+
+
+
+// async = makes a function return a Promise
+
+// async function loadFile() {
+
+//     let fileLoaded = false;
+
+//     if (fileLoaded) {
+//         return("File loaded");
+//     }
+//     else {
+//         throw("File NOT loaded");
+//     }
+// }
+
+// loadFile().then(value => console.log(value))
+//     .catch(error => console.log(error));
+
+
+
+// await = makes an async function wait for the Promise
+
+// async function loadFile() {
+
+//     let fileLoaded = false;
+
+//     if (fileLoaded) {
+//         return ("File loaded");
+//     }
+//     else {
+//         throw ("File NOT loaded");
+//     }
+// }
+
+// async function startProcess() {
+//     try {
+//         let message = await loadFile();
+//         console.log(message);
+//     }
+//     catch(error){
+//         console.log(error)
+//     }
+// }
+// startProcess();
+
+
+
+// ES6 Modules
+// The idea behind a module is that it's a file of reusable code
+// We can import sections of pre-written code to use whenever
+// Great for any general utility values and functions
+// Helps to make your code more reusable and maintanable
+// Think of modules as seperate chapter of a book
+
+// import { PI, getCircumference, getArea } from "./math_util.js";
+// import * as MathUtil from "./math_util.js"
+
+// console.log(MathUtil.PI);
+
+// let circumference = MathUtil.getCircumference(10);
+// console.log(circumference);
+
+// let area = MathUtil.getArea(10);
+// console.log(area);
+
+
+
+// DOM = Document Object Model (API)
+//       An iterface for changing the content of a page
+
+// console.dir(document);
+// console.log(document.title);
+// console.log(document.URL);
+// document.title = "Title goes here!";
+// document.location = "http://www.google.com"
+
+// document.body.style.backgroundColor = "skyblue";
+// document.getElementById("myDiv").innerHTML = "Hello";
+
+
+
+// element selectors
+
+// let element = document.getElementById("myTitle");
+// element.style.backgroundColor = "lightgreen";
+
+// let fruits = document.getElementsByName("fruits");
+
+// fruits.forEach(fruit => {
+//     if (fruit.checked) {
+//         console.log(fruit.value);
+//     }
+// })
+
+// let vegetables = document.getElementsByTagName("li");
+// vegetables[2].style.background = "lightgreen";
+
+// let desserts = document.getElementsByClassName("desserts");
+// desserts[2].style.backgroundColor = "lightgreen";
+
+// let element = document.querySelector("[for]");
+// element.style.backgroundColor = "lightgreen";
+
+// let elements = document.querySelectorAll("[for]");
+// elements.forEach(element => {
+//     element.style.backgroundColor = "lightgreen";
+// })
+
+
+
+// DOM traversal
+
+// let elemet = document.querySelector("#fruit");
+// let children = Array.from(elemet.children);
+
+// children.forEach(child => child.style.backgroundColor = "lightgreen");
+
+// .firstElementChild
+// .lastElementChild
+// .parentElement
+// .nextElementSibling
+// .previousElementSibling
+// .children[]
+// Array.from(.children)
+
+
+
+// add/change HTML elements
+// .innerHTML (vulnerable to XSS attacks)
+// .textContent (more secure)
+
+// const nameTag = document.createElement("h1");
+// nameTag.textContent = window.prompt("Enter your name");
+// document.body.append(nameTag);
+
+// const myList = document.querySelector("#fruit");
+// const listItem = document.createElement("li");
+// listItem.textContent = "mango";
+// // myList.append(listItem);
+// // myList.prepend(listItem);
+// myList.insertBefore(listItem, myList.getElementsByTagName("li")[1]);
+
+
+
+// add/Change CSS properties
+
+// const title = document.getElementById("myTitle");
+
+// title.style.backgroundColor = "#222222";
+// title.style.color = "rgb(50,200,250)";
+// title.style.fontFamily = "consolas";
+// title.style.textAlign = "center";
+// title.style.border = "2px solid";
+// title.style.display = "block";
+
+
+
+// events
+
+// const element = document.getElementById("myButton");
+// const element = document.body;
+// const element = document.getElementById("myText");
+// const element = document.getElementById("myDiv");
+
+// element.onclick = doSomething;
+// element.onload = doSomething;
+// element.onchange = doSomething;
+// element.onmouseover = doSomething;
+// element.onmouseout = doSomethingElse;
+// element.onmousedown = doSomething;
+// element.onmouseup = doSomethingElse;
+
+// function doSomething() {
+//     // alert("You did something!");
+//     element.style.backgroundColor = "red";
+// }
+
+// function doSomethingElse() {
+//     // alert("You did something!");
+//     element.style.backgroundColor = "lightgreen";
+// }
+
+
+
+// .addEventListener(event, function, useCapture)
+// You can add many event handlers to one element.
+// Even the same event that invokes different functions
+
+// const innerDiv = document.getElementById("innerDiv");
+// const outerDiv = document.getElementById("outerDiv");
+
+// innerDiv.addEventListener("mouseover", changeRed);
+// innerDiv.addEventListener("mouseout", changeGreen);
+
+// function changeRed(){
+//     innerDiv.style.backgroundColor = "red";
+// }
+
+// function changeGreen(){
+//     innerDiv.style.backgroundColor = "lightgreen";
+// }
+
+// innerDiv.addEventListener("click", changeBule);
+// outerDiv.addEventListener("click", changeBule, true);
+
+// function changeBule(){
+//     alert(`You selected ${this.id}`);
+//     this.style.backgroundColor = "lightblue";
+// }
+
+
+
+// show/hide HTML elements
+
+const myButton = document.querySelector("#myButon");
+const myImg = document.querySelector("#myImg");
+
+myButton.addEventListener("click", () => {
+
+    if(myImg.style.display == "none"){
+        myImg.style.display = "block";
+    }
+    else{
+        myImg.style.display = "none";
+    }
+})
