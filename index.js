@@ -1742,3 +1742,461 @@
 
 
 // detect key presses
+
+// const myDiv = document.getElementById("myDiv");
+// window.addEventListener("keydown", move);
+// let x = 0;
+// let y = 0;
+// function move(event) {
+
+//     switch (event.key) {
+//         case "ArrowDown":
+//             y += 5;
+//             myDiv.style.top = y + "px";
+//             break;
+//         case "ArrowUp":
+//             y -= 5;
+//             myDiv.style.top = y + "px";
+//             break;
+//         case "ArrowRight":
+//             x += 5;
+//             myDiv.style.left = x + "px";
+//             break;
+//         case "ArrowLeft":
+//             x -= 5;
+//             myDiv.style.left = x + "px";
+//             break;
+//         default:
+//             break;
+//     }
+// }
+
+
+
+// animations
+
+// const myButton = document.getElementById("myButton");
+// const myAnimation = document.getElementById("myDiv");
+
+// myButton.addEventListener("click", begin);
+
+// function begin() {
+//     // let timerId = null;
+//     // let x = 0;
+//     // let y = 0;
+
+//     // timerId = setInterval(frame, 5);
+
+//     // function frame() {
+//     //     if (x >= 200 || y >= 200) {
+//     //         clearInterval(timerId);
+//     //     } else {
+//     //         x += 1;
+//     //         y += 1;
+//     //         myAnimation.style.left = x + "px";
+//     //         myAnimation.style.top = y + "px";
+//     //     }
+//     // }
+
+//     // let timerId = null;
+//     // let degrees = 0;
+
+//     // timerId = setInterval(frame, 5);
+//     // function frame() {
+//     //     if (degrees >= 360) {
+//     //         clearInterval(timerId);
+//     //     } else {
+//     //         degrees += 1;
+//     //         myAnimation.style.transform = "rotateZ("+degrees+"deg)"
+//     //     }
+//     // }
+
+//     // let timerId = null;
+//     // let degrees = 0;
+//     // let x = 0;
+//     // let y = 0;
+
+//     // timerId = setInterval(frame, 5);
+//     // function frame() {
+//     //     if (x >= 200 || y >= 200) {
+//     //         clearInterval(timerId);
+//     //     } else {
+//     //         degrees += 5;
+//     //         x += 1;
+//     //         y += 1;
+//     //         myAnimation.style.left = x +"px";
+//     //         myAnimation.style.top = y +"px";
+//     //         myAnimation.style.transform = "rotateZ(" + degrees + "deg)"
+//     //     }
+//     // }
+
+//     let timerId = null;
+//     let scaleX = 1;
+//     let scaleY = 1;
+
+//     timerId = setInterval(frame, 5);
+//     function frame() {
+//         if (scaleX <= 0.1 || scaleY <= 0.1) {
+//             clearInterval(timerId);
+//         } else {
+//             scaleX -= 0.01;
+//             scaleY -= 0.01;
+//             myAnimation.style.transform = "scale("+scaleX+","+scaleY+")";
+//         }
+//     }
+// }
+
+
+
+// canvas API = a means for drawing graphics
+//              used for animations, games, data visualization
+
+// let canvas = document.getElementById("myCanvas");
+// let context = canvas.getContext("2d");
+
+// // DRAW LINES
+// // context.strokeStyle = "purple";
+// // context.lineWidth = 10;
+// // context.beginPath();
+// // context.moveTo(0, 0);
+// // context.lineTo(250, 250);
+// // context.lineTo(250, 500);
+// // context.moveTo(500, 0);
+// // context.lineTo(250, 250);
+// // context.stroke();
+
+// //DRAW TRIANGLE
+// // context.strokeStyle = "grey";
+// // context.fillStyle = "yellow";
+// // context.lineWidth = 10;
+// // context.beginPath();
+// // context.moveTo(250, 0);
+// // context.lineTo(0, 250);
+// // context.lineTo(500, 250);
+// // context.lineTo(250, 0);
+// // context.stroke();
+// // context.fill();
+
+// // DRAW RECTANGLE
+// // context.fillStyle = "black";
+// // context.fillRect(0, 0, 250, 250);
+// // context.strokeStyle = "black";
+// // context.strokeRect(0, 0, 250, 250);
+
+// // context.fillStyle = "red";
+// // context.fillRect(0, 250, 250, 250);
+// // context.strokeStyle = "black";
+// // context.strokeRect(0, 250, 250, 250);
+
+// // context.fillStyle = "green";
+// // context.fillRect(250, 250, 250, 250);
+// // context.strokeStyle = "black";
+// // context.strokeRect(250, 250, 250, 250);
+
+// // context.fillStyle = "blue";
+// // context.fillRect(250, 0, 250, 250);
+// // context.strokeStyle = "black";
+// // context.strokeRect(250, 0, 250, 250);
+
+// //DRAW CIRCLE
+// // (x, y, r, sAngle, eAngle, counterclockwise)
+// // context.fillStyle = "lightblue";
+// // context.strokeStyle = "darkblue";
+// // context.lineWidth = 10;
+// // context.beginPath();
+// // context.arc(250, 250, 200, 0, 2 * Math.PI);
+// // context.stroke();
+// // context.fill();
+
+// // DRAW TEXT
+// context.font = "50px MV Boli";
+// context.fillStyle = "grey";
+// context.textAlign = "center";
+// context.fillText("YOU WIN!", canvas.width / 2, canvas.height / 2);
+
+
+
+// window = interface used to talk to the web browser
+//          the DOM is a property of the window
+
+// const myButton = document.querySelector("#myButton");
+
+// console.dir(window);
+// console.log(window.innerWidth);
+// console.log(window.innerHeight);
+// console.log(window.scrollX);
+// console.log(window.scrollY);
+
+// console.log(window.location.href);
+// window.location.href = "https://google.com";
+// console.log(window.location.hostname);
+// console.log(window.location.pathname);
+
+// myButton.addEventListener("click", () => window.open("https://google.com"));
+// myButton.addEventListener("click", () => window.close());
+// myButton.addEventListener("click", () => window.print());
+
+// window.alert("Hello");
+// window.confirm("Press OK to continue!");
+
+// let age = window.prompt("Enter your age");
+// if (age < 18) {
+//     window.alert("You must be 18+ to visit this site");
+//     window.close();
+// }
+
+
+
+// cookie = a small text file stored on your computer
+//          used to remember information about the user
+//          saved in name = value pairs
+
+// console.log(navigator.cookieEnabled);
+// document.cookie = "firstName = SpongeBob; expires=Sun, 1 January 2030 12:00:00 UTC; path=/";
+// document.cookie = "lastName = SquarePants; expires=Sun, 1 January 2030 12:00:00 UTC; path=/";
+// console.log(document.cookie);
+
+// setCookie("firstName", "SpongeBob", 365);
+// setCookie("lastName", "SquarePants", 365);
+
+// console.log(getCookie("firstName"));
+// console.log(getCookie("lastName"));
+
+
+// const firstText = document.querySelector("#firstText");
+// const lastText = document.querySelector("#lastText");
+// const submitBtn = document.querySelector("#submitBtn");
+// const cookieBtn = document.querySelector("#cookieBtn");
+
+// submitBtn.addEventListener("click", () => {
+//     setCookie("firstName", firstText.value, 365);
+//     setCookie("lastName", lastText.value, 365);
+// });
+// cookieBtn.addEventListener("click", () => {
+//     firstText.value = getCookie("firstName");
+//     lastText.value = getCookie("lastName")
+// });
+
+// function setCookie(name, value, daysToLive) {
+//     const date = new Date();
+//     date.setTime(date.getTime() + daysToLive * 24 * 60 * 60 * 1000);
+//     let expires = "expries=" + date.toUTCString();
+//     document.cookie = `${name}=${value}; ${expires}; path=/`
+// }
+// function deleteCookie(name) {
+//     setCookie(name, null, null);
+// }
+// function getCookie(name) {
+//     const cDecoded = decodeURIComponent(document.cookie);
+//     const cArray = cDecoded.split("; ");
+//     let result = null;
+
+//     cArray.forEach(element => {
+//         if (element.indexOf(name) == 0) {
+//             result = element.substring(name.length + 1)
+//         }
+//     })
+//     return result;
+// }
+
+
+
+// stopwatch program
+
+// const timeDisplay = document.querySelector("#timeDisplay");
+// const startBtn = document.querySelector("#startBtn");
+// const pauseBtn = document.querySelector("#pauseBtn");
+// const resetBtn = document.querySelector("#resetBtn");
+
+// let startTime = 0;
+// let elapsedTime = 0;
+// let currentTime = 0;
+// let paused = true;
+// let intervalId;
+// let hrs = 0;
+// let mins = 0;
+// let secs = 0;
+
+// startBtn.addEventListener("click", () => {
+//     if (paused) {
+//         paused = false;
+//         startTime = Date.now() - elapsedTime;
+//         intervalId = setInterval(updateTime, 1000);
+//     }
+// });
+// pauseBtn.addEventListener("click", () => {
+//     if (!paused) {
+//         paused = true;
+//         elapsedTime = Date.now() - startTime;
+//         clearInterval(intervalId);
+//     }
+// });
+// resetBtn.addEventListener("click", () => {
+//     paused = true;
+//     clearInterval(intervalId);
+//     startTime = 0;
+//     elapsedTime = 0;
+//     currentTime = 0;
+//     hrs = 0;
+//     mins = 0;
+//     secs = 0;
+//     timeDisplay.textContent = "00:00:00";
+// });
+
+// function updateTime() {
+//     elapsedTime = Date.now() - startTime;
+
+//     secs = Math.floor(elapsedTime / 1000 % 60);
+//     mins = Math.floor(elapsedTime / (1000 * 60) % 60);
+//     hrs = Math.floor(elapsedTime / (1000 * 60 * 60) % 60);
+
+//     secs = pad(secs);
+//     mins = pad(mins);
+//     hrs = pad(hrs);
+
+//     timeDisplay.textContent = `${hrs}:${mins}:${secs}`;
+
+//     function pad(unit) {
+//         return (("0") + unit).length > 2 ? unit : "0" + unit;
+//     }
+// }
+
+
+
+// rock paper scissors game
+
+// const playerText = document.querySelector("#playerText");
+// const computerText = document.querySelector("#computerText");
+// const resultText = document.querySelector("#resultText");
+// const choiceBtn = document.querySelectorAll(".choiceBtn");
+// let player;
+// let computer;
+// let result;
+
+// choiceBtn.forEach(button => button.addEventListener("click", () => {
+
+//     player = button.textContent;
+//     computerTurn();
+//     playerText.textContent = `Player: ${player}`;
+//     computerText.textContent = `Computer: ${computer}`;
+//     resultText.textContent = checkWinner();
+// }));
+
+// function computerTurn() {
+//     const randNum = Math.floor(Math.random() * 3) + 1;
+
+//     switch (randNum) {
+//         case 1:
+//             computer = "ROCK";
+//             break;
+//         case 2:
+//             computer = "PAPER";
+//             break;
+//         case 3:
+//             computer = "SCISSORS";
+//             break;
+//     }
+// }
+
+// function checkWinner() {
+//     if (player == computer) {
+//         return "Draw!";
+//     } else if (computer == "ROCK") {
+//         return (player == "PAPER") ? "You Win!" : "You Lose!";
+//     } else if (computer == "PAPER") {
+//         return (player == "SCISSORS") ? "You Win!" : "You Lose!";
+//     } else if (computer == "SCISSORS") {
+//         return (player == "ROCK") ? "You Win!" : "You Lose!";
+//     }
+// }
+
+
+
+// tictactoe game
+
+const cells = document.querySelectorAll(".cell");
+const statusText = document.querySelector("#statusText");
+const restartBtn = document.querySelector("#restartBtn");
+const winConditions = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
+let options = ["", "", "", "", "", "", "", "", ""];
+let currentPlayer = "X";
+let running = false;
+
+initializeGame();
+
+function initializeGame() {
+    cells.forEach(cell => cell.addEventListener("click", cellClicked));
+    restartBtn.addEventListener("click", restartGame);
+    statusText.textContent = `${currentPlayer}'s turn`;
+    running = true;
+}
+
+function cellClicked() {
+    const cellIndex = this.getAttribute("cellIndex");
+
+    if (options[cellIndex] != "" || !running) {
+        return;
+    }
+
+    updateCell(this, cellIndex);
+    checkWinner();
+}
+
+function updateCell(cell, index) {
+    options[index] = currentPlayer;
+    cell.textContent = currentPlayer;
+}
+
+function changePlayer() {
+    currentPlayer = (currentPlayer == "X") ? "O" : "X";
+    statusText.textContent = `${currentPlayer}'s turn`;
+}
+
+function checkWinner() {
+    let roundWon = false;
+
+    for (let i = 0; i < winConditions.length; i++) {
+        const condition = winConditions[i];
+        const cellA = options[condition[0]];
+        const cellB = options[condition[1]];
+        const cellC = options[condition[2]];
+
+        if (cellA == "" || cellB == "" || cellC == "") {
+            continue;
+        }
+        if (cellA == cellB && cellB == cellC) {
+            roundWon = true;
+            break;
+        }
+    }
+
+    if (roundWon) {
+        statusText.textContent = `${currentPlayer} wins!`
+        running = false;
+    }
+    else if (!options.includes("")) {
+        statusText.textContent = `Draw!`;
+        running = false
+    }
+    else {
+        changePlayer();
+    }
+}
+function restartGame() {
+    currentPlayer = "X";
+    options = ["", "", "", "", "", "", "", "", ""];
+    statusText.textContent = `${currentPlayer}'s turn`;
+    cells.forEach(cell => cell.textContent = "");
+    running = true;
+}
+
+
